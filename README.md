@@ -1,0 +1,2 @@
+# Design-Implementation-of-IR-Based-Remote-Controlled-Robot-
+This Python program simulates an IR-based remote-controlled robot, allowing users to control its movement (forward, backward, left, right) through keyboard inputs (W, A, S, D). The robot's position is updated and displayed after each command. It provides a dynamic and interactive simulation, suitable for educational and developmental purposes.
