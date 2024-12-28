@@ -1,0 +1,63 @@
+import time
+
+class Robot:
+    def __init__(self):
+        self.position = [0, 0]  # Robot's starting position (x, y)
+        self.direction = "STOPPED"  # Initial direction
+
+    def move_forward(self):
+        self.position[1] += 1  # Move up (increase y-coordinate)
+        self.direction = "FORWARD"
+        print(f"Moving Forward. Current Position: {self.position}")
+
+    def move_backward(self):
+        self.position[1] -= 1  # Move down (decrease y-coordinate)
+        self.direction = "BACKWARD"
+        print(f"Moving Backward. Current Position: {self.position}")
+
+    def move_left(self):
+        self.position[0] -= 1  # Move left (decrease x-coordinate)
+        self.direction = "LEFT"
+        print(f"Moving Left. Current Position: {self.position}")
+
+    def move_right(self):
+        self.position[0] += 1  # Move right (increase x-coordinate)
+        self.direction = "RIGHT"
+        print(f"Moving Right. Current Position: {self.position}")
+
+    def stop(self):
+        self.direction = "STOPPED"
+        print(f"Robot Stopped. Current Position: {self.position}")
+
+def control_robot():
+    robot = Robot()
+
+    print("IR-Based Remote Controlled Robot")
+    print("Use the following keys to control the robot:")
+    print("W = Move Forward, A = Move Left, S = Move Backward, D = Move Right, Q = Stop, E = Exit")
+
+    while True:
+        # Get user input for movement
+        command = input("Enter Command: ").strip().upper()
+
+        if command == "W":
+            robot.move_forward()
+        elif command == "A":
+            robot.move_left()
+        elif command == "S":
+            robot.move_backward()
+        elif command == "D":
+            robot.move_right()
+        elif command == "Q":
+            robot.stop()
+        elif command == "E":
+            print("Exiting robot control...")
+            break
+        else:
+            print("Invalid command. Please use W, A, S, D, Q, or E.")
+
+        # Simulating a small delay to mimic real-time control
+        time.sleep(0.5)
+
+if __name__ == "__main__":
+    control_robot()
